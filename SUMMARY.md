@@ -1,9 +1,9 @@
 # Summary
 
 * [Introduction](README.md)
-* Data Understanding
-* Data Preparation
-* Modeling
-* Evaluation
-* Deployment
+* [Data Understanding](data-understanding.md)
+* [Data Preparation](data-preparation.md)
+* [Modeling](modeling.md)
+* [Evaluation](evaluation.md)
+* [Deployment](deployment.md)
 
