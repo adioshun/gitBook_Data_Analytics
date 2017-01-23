@@ -35,13 +35,6 @@ The data preparation phase covers all activities to construct the final dataset 
 ![](/assets/pca_de.png)
 
 
-
-
-
-
-
-
-
 ## 1. Select Data
 
 ## 2. Clean Data
@@ -51,7 +44,5 @@ The data preparation phase covers all activities to construct the final dataset 
 
 
 ## 4. Integrate Data
-
-
 
 ## 5. Format Data 
