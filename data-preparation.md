@@ -36,13 +36,68 @@ The data preparation phase covers all activities to construct the final dataset 
 
 
 ## 1. Select Data
+Feature selection method (추천 논문 : http://goo.gl/3dz8Ar)
+* Filter : 결과변수와 상관계수 같은 통계량이나 척도에 기반한 순위에 따라 가능한 특징을 정렬 . 
+* eg) 매번 p값, r-제곱을 파악하고 낮은 P-값이나 높은 R-제곱값에 따라 순위를 매김 –
 
+
+Wrapper : 어떤 고정된 크기의 특징들의 부분 집합을 찾고자 한다. 
+* 고려 요소 1 : 특징들을 선택하기 위해 사용하는 알고리즘 선택 
+    1. 전진 선택(Forward Selection) = 
+    2. 후진 제거(Backward Elimination) 
+    3. 혼합형 접근(Combined Approach) 
+* 고려 요소 2 : 특징들의 집합을 '좋다'고 판단하기 위한 필터나 선택 기준 결정 
+    * R제곱값 = 모형에 의해 설명되는 분산의 비율 
+    * P 값 = 가정된 귀무가설이 관찰값을 이용하여 얻게될 확률 
+    * 아케이케 정보기준(AIC) = 2k -2nl(L) = 2(모수의 개수) -2(로그가능도의 최댓값) 
+    * 베이지안 정보기준(BIC) = K*ln(n) - 2ln(L) = (모수의개수)*ln(관측값의개수) - 2(로그가능도의 최댓값) 
+    * 엔트로피 = 무엇이 어마나 혼합되어 있는지에 대한 척도 
+    
+    
 ## 2. Clean Data
 
 
 ## 3. Construct Data
+데이터 정규화(Feature Scaling) 
+* 변숫값의 분포를 표준화 하는 것 
+* 표준화 = 변수에서 데이터의 평균을 빼거나 or 변수를 전체 데이터의 표준 편차로 나누는 작업 
+* 결과 : 변수값이 평균이 0이 되고, 값의 분포가 일정해짐 
+* Scale()함수 사용 : as.data.frame(scale(iris[1:4])) 
 
+
+Scaling and Centering of Matrix-like Objects
+* Centering = 관측치 – 평균 
+* 척도 변환 
+* 다른 변수와의 비교를 위하여 
+
+Scale (x, center = TRUE, scale = TURE)
+* X : a numeric matrix(like object).
+* Center : either a logical value or a numeric vector of length equal to the number of columns of x.
+* Scale : either a logical value or a numeric vector of length equal to the number of columns of x.
+
+
+
+> Center = 평균이 0이 되게 함, Scale = 분산이 1이 되게함 
 
 ## 4. Integrate Data
+PCA(Principle Component Anaysis, 주성분분석)
+* PCA는 데이터에 많은 변수가 있을때 변수의 수를 줄이는 차원 감소 기법중 하나 
+얼굴 인식 분야에서 가장 보편 적으로 사용, 다중공선성 문제 해결에 활용 가능
+* PCA는 변수들을 주성분이라 부르는 선형적인 상관관계가 없는 다른 변수들로 재표현 
+* 주성분들은 원 데이터의 분산을 최대한 보존하는 방법으로 구함
+* PCA는 선형적으로 상관관계가 없는 독립된 변수들을 찾는 기법  
+* Princomp()함수 사용 : 
+    * 범주 레벨의 수가 많다면 One Hot Encoding(model.matrix())사용
+
+
+* 동작 순서 
+
+    1. 전체 데이터의 평균을 구한다
+    2. 전체 데이터에 평균을 뺀다
+    3. 공분산 행렬을 만든다. (공분산 행렬은 모든 요소의 공통된 부분을 뺀 개별적 특징이 포함된 데이터라고 표현할 수 있다.)
+    4. 공분산 행렬을 이용해 Eigen value와 Eigen vector를 구한다 
+    5. 전체 데이터를 Eigen vector에 Projection한다    (= Projection matrix(eigen vecto들의 모음)을 모든 데이터에 곱한다)
+    
+
 
 ## 5. Format Data 
