@@ -89,7 +89,12 @@ Missing values treatment
 
 ![](/assets/missing2.png)
 
+http://www.analyticsvidhya.com/blog/2015/02/7-steps-data-exploration-preparation-building-model-part-2/
+http://rfriend.tistory.com/34 
 
+VIM : http://cran.r-project.org/web/packages/VIM/index.html
+PISA : http://jbryer.github.com/pisa
+http://www.r-bloggers.com/visualizing-missing-data-3/
 
 
 
@@ -120,6 +125,8 @@ test2$lesson_time2 <- sub("NULL","0",test2$lesson_time)
 * 표준화 = 변수에서 데이터의 평균을 빼거나 or 변수를 전체 데이터의 표준 편차로 나누는 작업 
 * 결과 : 변수값이 평균이 0이 되고, 값의 분포가 일정해짐 
 * Scale()함수 사용 : as.data.frame(scale(iris[1:4])) 
+
+> Scale() : http://blog.naver.com/richardyhong/220274690282
 
 
 Scaling and Centering of Matrix-like Objects
