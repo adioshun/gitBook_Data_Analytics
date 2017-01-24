@@ -72,8 +72,9 @@ Wrapper : 어떤 고정된 크기의 특징들의 부분 집합을 찾고자 한
     
 ```{R}
 # 모델을 사용한 변수 중요도 계산 : caret::varlmp()
-
-```      
+``` 
+![](/assets/varlmp.png)
+          
 ## 2. Clean Data
 결측치 찾기
 * 결측값이 총 몇 개인지 계산하는 방법: sum(is.na())
