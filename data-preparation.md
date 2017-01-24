@@ -55,6 +55,24 @@ Wrapper : 어떤 고정된 크기의 특징들의 부분 집합을 찾고자 한
     
     
 ## 2. Clean Data
+결측치 찾기
+* 결측값이 총 몇 개인지 계산하는 방법: sum(is.na())
+* 관측값에 결측치가 없는지를 테스트하며, 반환 값은 관측값에 결측치가 있으면 FALSE, 없으면 TRUE가 된다. complete.cases()
+
+Missing values treatment
+* Delection(List wise delection) : 빈값이 있는행 삭제, 간편함, 샘플수 줄어듬의 단점
+    * ld(data)  
+    * 결측값이 들어있는 행 전체를 데이터 셋에서 제거: test <- na.omit(test)
+* Delection(pair wise delection) : 
+* 특정 행과 열에 결측값이 들어있는 행을 데이터 셋에서 제거 : complete.cases()
+* Replace : 결측값을 다른 값으로 대체: dataset$var[is.na(dataset$var)] <- new_value
+
+![](/assets/missing2.png)
+
+
+
+
+
 결측치 대치(imputation) 
 * 결측치 찾기 : complete.cases() , table(is.na(데이터))
 * 처리 방법 : 해당 데이터 제외, 평균, 중앙값 
