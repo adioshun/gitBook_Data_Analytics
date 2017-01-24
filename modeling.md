@@ -61,8 +61,47 @@ http://machinelearningmastery.com/compare-models-and-select-the-best-using-the-c
 
 https://thebook.io/006723/Ch09/03/03/06/
 
+## caret패키지 trainControl() 방법들 
+Bootstrap
+* 복원 추출 기반 ReSampling 방식 사용 
+* train_control <- trainControl(method="boot", number=100)
+
+k-fold Cross Validation
+* 데이터를 K개의 subset으로 잘라서 수행
+* train_control <- trainControl(method="cv", number=10)
+
+Repeated k-fold Cross Validation (저자 추천 방식)
+* 데이터를 K개의 subset으로 잘라서 수행하는 것을 n번만큼 반복
+* train_control <- trainControl(method="repeatedcv", number=10, repeats=3)
+
+Leave One Out Cross Validation (LOOCV)
+* train_control <- trainControl(method="LOOCV")
+
+http://machinelearningmastery.com/how-to-estimate-model-accuracy-in-r-using-the-caret-package/
+
 
 > 과적합
 > * 특정 데이터를 이용하여 모델 생성 후 해당 데이터에는 잘 동작하지만, 새로운 데이터에는 좋지 않는 성능을 보이는 경우 
 > * 평가 방법 : 특정데이터의 일부는 훈련 모델(약 70%), 나머지는 테스트로 사용해 평가 
 
+## caret패키지 이용한 Data Slicing
+createDataPartition
+* p의 %로 분할, Index값 Return 
+* createDataPartition(y=spam$type, p=0.8, list=FALSE)
+
+createFolds
+* k-fold방법을 이용한 Cross Validation시 사용 
+* folds <- createFolds(y=spam$type, k=10, list=TRUE, returnTrain = FALSE)
+* 테스트 케이스 생성 : sapply(folds, length)
+
+createResample
+* Resampling(Bootstrapping)방법을 이용한 Cross Validation시 사용 
+* K-fold와 다르게 샘플에 중복값 존재 
+* folds <- createResample(y=spam$type, times=10, list=TRUE)
+
+createTimeSlice
+* 시계열 데이터 Slicing 시 사용 
+* folds <- createTimeSlices(y=time, initialWindow = 20, horizon = 10)
+* 트레이닝 20개, 테스트 10가 반복 수행 
+
+참고 : http://goodtogreate.tistory.com/m/post/entry/Week-02-Caret-Package-dataSlicing
