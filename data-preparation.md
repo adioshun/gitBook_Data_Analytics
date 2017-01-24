@@ -166,3 +166,5 @@ PCA(Principle Component Anaysis, 주성분분석)
 
 
 ## 5. Format Data 
+![](/assets/Picture1-trans.png)
+http://rfriend.tistory.com/62
