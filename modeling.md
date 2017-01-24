@@ -8,7 +8,7 @@ In this phase, various modeling techniques are selected and applied, and their p
 
 ## 3. Build Model Parameter settings
 파라미터 튜닝 : trControl()
-
+![](/assets/tr.png)
 
 파라미터 튜닝 최적화 : 
 * preprocess() : principal component analysis 또는 independent component analysis.
