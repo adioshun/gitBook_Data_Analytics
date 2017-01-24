@@ -13,6 +13,45 @@ At this stage in the project you have built a model \(or models\) that appears t
 여러 모델을 동시 성능 평가
 ![](/assets/fmtest.png)
 
+classification performance 
+* Confusion matrix : http://blog.naver.com/ilustion/220275811793
+* lift chart
+* gain chart
+* ROC Curve (classification 에서만)
+
+
+### Confusion matrix
+```
+library("SDMTools")
+mat <- confusion.matrix(german$y, german$pred, threadhold=0.5)
+mat
+omission(mat)
+sensitivity(mat)
+specificity(mat)
+prop.correct(mat)
+```
+* AUC(area under curve): ROC curve 아래의 면적, 숫자가 높을수록 좋다.
+* omission.rate: the ommission rate as a proportion of true occurrences misidentified given the defined threshold value
+* sensitivity: 1일 확률, 민감도
+* specificity: 0일 확률, 특이도
+* prop.correct: 모델의 정확도
+* kappa statistic : Fleiss의 판단기준..
+  * 신뢰도 낮다: 0.4 미만
+  * 신뢰도 있다: 0.4 ~ 0.6
+  * 신뢰도 높다: 0.6 ~ 0.75
+  * 신뢰도 매우 높다: 0.75 초과
+  
+![](/assets/coma.png)
+* 정확도 : 모델의 정확도
+* 민감도 : True 확률
+* 특이도 : False 확룰
+* 오류율 : 모델의 오류율
+
+http://databaser.net/moniwiki/wiki.php/%EB%A1%9C%EC%A7%80%EC%8A%A4%ED%8B%B1%ED%9A%8C%EA%B7%80%EB%B6%84%EC%84%9D
+
+> 참고: 민감도와 특이도 #
+
+> *특정 질병에 대한 조사결과..민감도 (질병에 실제로 걸렸을 때 걸렸다는 검사 결과)가 99.7%고 특이도 (질병에 실제로 안 걸렸을 때 안 걸렸다는 검사 결과)가 98.5%입니다. 이게 무슨 소리냐면, 1000명을 검사했을 때 병이 있는데도 없다고 오진받는 사람은 3명이고 병이 없는데도 있다고 오진되는 사람은 15명 정도라는 거죠.
 
 
 ## 2. Approved Models
