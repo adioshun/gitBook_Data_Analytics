@@ -53,6 +53,44 @@ http://databaser.net/moniwiki/wiki.php/%EB%A1%9C%EC%A7%80%EC%8A%A4%ED%8B%B1%ED%9
 
 > *특정 질병에 대한 조사결과..민감도 (질병에 실제로 걸렸을 때 걸렸다는 검사 결과)가 99.7%고 특이도 (질병에 실제로 안 걸렸을 때 안 걸렸다는 검사 결과)가 98.5%입니다. 이게 무슨 소리냐면, 1000명을 검사했을 때 병이 있는데도 없다고 오진받는 사람은 3명이고 병이 없는데도 있다고 오진되는 사람은 15명 정도라는 거죠.
 
+### 성능 평가 인자 (Classification )
+#### 1. Accuracy 
+* the percentage of correctly classifies instances out of all instances. 
+* It is more useful on a binary classification > multi-class classification problems 
+	* because it can be less clear exactly how the accuracy breaks down across those classes
+
+#### 2. Confusion matrix : 각 항목 별로 Accuracy 확인시 사용 
+
+#### 3. Kappa 
+* classification accuracy, except that it is normalized at the baseline of random chance on your dataset. 
+* It is a more useful measure to use on problems that have an imbalance in the classes
+	* (e.g. 70-30 split for classes 0 and 1 and you can achieve 70% accuracy by predicting all instances are for class 0).
+
+#### 4. ROC (Area Under ROC Curve: AUROC) also called (Area Under curve:AUC)
+* ROC is actually the area under the ROC curve or AUC.
+	* only suitable for binary classification problems(e.g. two classes).
+	* The AUC represents a models ability to discriminate between positive and negative classes 
+* ROC can be broken down into sensitivity and specificity.  (Trade-off 관계)
+	* Sensitivity = the true positive rate = recall : It is the number instances from the positive (first) class that actually predicted correctly.
+	* Specificity = true negative rate : Is the number of instances from the negative class (second) class that were actually predicted correctly
+
+#### 5. Gini : ROC 확장 버전, 일반적으로 60%이상이면 좋은 모델임 
+
+#### 6. Logarithmic Loss (LogLoss)
+* it evaluates the probabilities estimated by the algorithms
+* multi-class/ binary classification algorithms. 
+
+### 성능 평가 인자 (Classification )
+#### RMSE
+* the average deviation of the predictions from the observations. 
+* It is useful to get a gross idea of how well (or not) an algorithm is doing, in the units of the output variable
+* RMSE is highly affected by outlier values.  outliers 제거 필수
+#### R^2 (= R Squared , coefficient of determination)
+* a “goodness of fit” measure for the predictions to the observations. 
+* This is a value between 0 and 1 for no-fit and perfect fit respectively
+
+
+
 
 ## 2. Approved Models
 
