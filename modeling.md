@@ -5,6 +5,16 @@ In this phase, various modeling techniques are selected and applied, and their p
 
 ## 2. Generate Test Design 
 
+### 2.1 Sampling 
+수집된 데이터 중에서 테스트용과 검증용으로 7:3(일반적)으로 나누기
+
+#### A. 단순 임의 추출 
+
+#### B. 층화 임의 추출
+
+
+#### C. 계통 추출 
+
 
 ## 3. Build Model Parameter settings
 파라미터 튜닝 : trControl()
