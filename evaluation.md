@@ -10,6 +10,10 @@ At this stage in the project you have built a model \(or models\) that appears t
   * 향상도\(lift\) 
 
 ## 1. Evaluate Results
+여러 모델을 동시 성능 평가
+![](/assets/fmtest.png)
+
+
 
 ## 2. Approved Models
 
