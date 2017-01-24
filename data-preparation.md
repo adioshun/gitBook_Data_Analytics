@@ -1,6 +1,7 @@
 # Data Preparation
 The data preparation phase covers all activities to construct the final dataset (data that will be fed into the modeling tool(s)) from the initial raw data. Data preparation tasks are likely to be performed multiple times, and not in any prescribed order. Tasks include table, record, and attribute selection as well as transformation and cleaning of data for modeling tools.
 
+
 데이터 Preparation단계는 다시 두 단계로 나눌수 있다. 
 
 * 전처리 :수집한 데이터를 저장소에 적재하기 위한 작업으로 데이터 필터링, 유형 변환, 정제 등 기술 활용
