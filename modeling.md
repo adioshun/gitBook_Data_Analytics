@@ -1,4 +1,14 @@
 # Modeling
+* 목표
+	* 모델링 기법을 선택하고 최적의 값을 가진 파라메터 변수를 설정
+* Actions
+	* Select Modeling Technique : 모델링 기법 선택
+	* Generate Test Design : 모델의 유효성을 검사하고 품질을 테스트하는 절차 생성
+	* Build Model : 모델을 구축하는 모델링 기법을 실행
+	* Assess Model : 해석, 평가, 비교 및 데이터 마이닝 관점에서 평가 기준에 따라 모델의 순위 지정
+* KDD : (변환) 변환 데이터 -> (데이터 마이닝) 패턴
+* Process 2 : 모델링 (데이터 처리 및 분석)
+
 In this phase, various modeling techniques are selected and applied, and their parameters are calibrated to optimal values. Typically, there are several techniques for the same data mining problem type. Some techniques have specific requirements on the form of data. Therefore, stepping back to the data preparation phase is often needed.
 
 <!-- toc -->

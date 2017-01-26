@@ -1,4 +1,14 @@
 # Evaluation
+* 목표
+	* 충분한 평가를 통해서 비즈니스 목표를 달성할 것으로 확신되는 모델을 선정
+	* 전체 프로세스를 재검토하고 다음 단계를 결정
+* Actions
+	* Evaluate Results : 결과가 비즈니스 목표에 부합하는지 확인
+	* Review Process : 빠트린 사항이 없도록 중요 항목을 도출하고 전체 프로세스를 요약
+	* Determine Next Steps : 다음 단계를 결정
+* KDD : (해석/평가) 지식
+* Process 2 : 검증
+* 수리적 모델의 검증과 변수/데이터의 확인
 
 At this stage in the project you have built a model \(or models\) that appears to have high quality, from a data analysis perspective. Before proceeding to final deployment of the model, it is important to more thoroughly evaluate the model, and review the steps executed to construct the model, to be certain it properly achieves the business objectives. A key objective is to determine if there is some important business issue that has not been sufficiently considered. At the end of this phase, a decision on the use of the data mining results should be reached.
 

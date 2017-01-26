@@ -1,4 +1,15 @@
 # Data Preparation
+* 목표
+	* 모델링 도구의 입력이 될 최종 데이터를 원시 데이터로부터 추출
+* Actions
+	* Select Data : 분석에 사용할 데이터를 선별
+	* Clean Data : 분석 기법에서 요구한 수준으로 데이터의 품질을 향상
+	* Construct Data : 분석을 위한 구조화된 데이터 준비
+	* Integrate Data : 분석을 위해 여러 테이블에서 데이터를 통합
+	* Format Data : 사용하려는 모델에 적합하도록 데이터의 구문 수정
+* KDD : 데이터 - (추출) 목표 데이터 - (전처리) 사전처리 데이터
+* Process 2 : 데이터 입력 -> 데이터 확인
+
 The data preparation phase covers all activities to construct the final dataset (data that will be fed into the modeling tool(s)) from the initial raw data. Data preparation tasks are likely to be performed multiple times, and not in any prescribed order. Tasks include table, record, and attribute selection as well as transformation and cleaning of data for modeling tools.
 
 

@@ -1,4 +1,15 @@
 # Data Understanding
+* 목표
+	* 초기 데이터를 수집, 이해하고 데이터의 품질을 정의하고 몇가지 가설을 구성하기 위한 데이터셋을 설정
+* Actions
+	* Collect Initial Data : 초기 데이터를 수집
+	* Describe Data : 수집된 데이터의 특성을 확인
+	* Explore Data : 질의, 시각화, 보고서 등 데이터 마이닝 목표에 부합하는 데이터 추출
+	* Verify Data Quality : 데이터의 품질 검사
+* 문제 해결을 위해 어떤 데이터를 사용하여야 하는가?
+* 문제 해결을 위한 데이터 이면에 숨겨져 있는 원리는?
+* 변수 선정
+
 The data understanding phase starts with an initial data collection and proceeds with activities in order to get familiar with the data, to identify data quality problems, to discover first insights into the data, or to detect interesting subsets to form hypotheses for hidden information.
 
 
