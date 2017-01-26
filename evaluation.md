@@ -53,20 +53,20 @@ http://databaser.net/moniwiki/wiki.php/%EB%A1%9C%EC%A7%80%EC%8A%A4%ED%8B%B1%ED%9
 
 > *특정 질병에 대한 조사결과..민감도 (질병에 실제로 걸렸을 때 걸렸다는 검사 결과)가 99.7%고 특이도 (질병에 실제로 안 걸렸을 때 안 걸렸다는 검사 결과)가 98.5%입니다. 이게 무슨 소리냐면, 1000명을 검사했을 때 병이 있는데도 없다고 오진받는 사람은 3명이고 병이 없는데도 있다고 오진되는 사람은 15명 정도라는 거죠.
 
-### 성능 평가 인자 (Classification )
-#### 1. Accuracy 
+### 1.1 성능 평가 인자 (Classification )
+#### A. Accuracy 
 * the percentage of correctly classifies instances out of all instances. 
 * It is more useful on a binary classification > multi-class classification problems 
 	* because it can be less clear exactly how the accuracy breaks down across those classes
 
-#### 2. Confusion matrix : 각 항목 별로 Accuracy 확인시 사용 
+#### B. Confusion matrix : 각 항목 별로 Accuracy 확인시 사용 
 
-#### 3. Kappa 
+#### C. Kappa 
 * classification accuracy, except that it is normalized at the baseline of random chance on your dataset. 
 * It is a more useful measure to use on problems that have an imbalance in the classes
 	* (e.g. 70-30 split for classes 0 and 1 and you can achieve 70% accuracy by predicting all instances are for class 0).
 
-#### 4. ROC (Area Under ROC Curve: AUROC) also called (Area Under curve:AUC)
+#### D. ROC (Area Under ROC Curve: AUROC) also called (Area Under curve:AUC)
 * ROC is actually the area under the ROC curve or AUC.
 	* only suitable for binary classification problems(e.g. two classes).
 	* The AUC represents a models ability to discriminate between positive and negative classes 
@@ -74,29 +74,29 @@ http://databaser.net/moniwiki/wiki.php/%EB%A1%9C%EC%A7%80%EC%8A%A4%ED%8B%B1%ED%9
 	* Sensitivity = the true positive rate = recall : It is the number instances from the positive (first) class that actually predicted correctly.
 	* Specificity = true negative rate : Is the number of instances from the negative class (second) class that were actually predicted correctly
 
-#### 5. Gini : ROC 확장 버전, 일반적으로 60%이상이면 좋은 모델임 
+#### E. Gini : ROC 확장 버전, 일반적으로 60%이상이면 좋은 모델임 
 
-#### 6. Logarithmic Loss (LogLoss)
+#### F. Logarithmic Loss (LogLoss)
 * it evaluates the probabilities estimated by the algorithms
 * multi-class/ binary classification algorithms. 
 
-### 성능 평가 인자 (Classification )
-#### RMSE
+### 1.2 성능 평가 인자 (Classification )
+#### A. RMSE
 * the average deviation of the predictions from the observations. 
 * It is useful to get a gross idea of how well (or not) an algorithm is doing, in the units of the output variable
 * RMSE is highly affected by outlier values.  outliers 제거 필수
-#### R^2 (= R Squared , coefficient of determination)
+#### B. R^2 (= R Squared , coefficient of determination)
 * a “goodness of fit” measure for the predictions to the observations. 
 * This is a value between 0 and 1 for no-fit and perfect fit respectively
 
-### 성능 평가 인자 (Correlation)
+### 1.3 성능 평가 인자 (Correlation)
 * 두 확률 변수 사이의 관련성 파악
 * 일반적으로 상관 계수는 `피어슨 상관 계수`의미 
 * R의 cor()사용 
  * method=c("pearson","spearman","kendall")
 * R에서 상관 계수 검정 cor.test()사용 
 
-#### 피어슨 상관 계수(Pearson Correlation Coefficient)
+#### A. 피어슨 상관 계수(Pearson Correlation Coefficient)
 * 두 변수 간의 `선형적` 상관 관계 측정
 * 연속형 데이터에 적합
  * eg. 국어 & 영어 점수 간의 상관 관계 
@@ -109,7 +109,7 @@ $$
 > $$\rho(X,Y)$$는 공분산, 두 확률 변수가 얼마나 함께 변하는가 측정
 
 
-#### 스피어만 상관 계수(Spearman's Rank Correlation Cofficient)
+#### B. 스피어만 상관 계수(Spearman's Rank Correlation Cofficient)
 * 두 데이터의 실제 데이터 대신 두 값의 `순위(rank)`를 사용
 * 두 변수 간의 `비선형` 연관성 파악 가능
 * 이산형, 순서형 데이터에 적용 가능 
@@ -121,7 +121,7 @@ $$
 \rho = \frac{\sum_i(x_i-\overline x)(y_i-\overline y)}{\sqrt{\sum_i(x_i-\overline x)^2}\sqrt{\sum_i(y_i-\overline y)^2}}
 $$
 
-#### 켄달의 순위 상관 계수(Kendal's Rank Correlation Cofficient)
+#### C. 켄달의 순위 상관 계수(Kendal's Rank Correlation Cofficient)
 * (X,Y)순서쌍으로 데이터가 있을때
  * x가 커질때 y도 커지면 부합
  * x가 커질때 y가 작아지면 비부합
