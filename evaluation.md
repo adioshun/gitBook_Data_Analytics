@@ -28,7 +28,7 @@ sensitivity(mat)
 specificity(mat)
 prop.correct(mat)
 ```
-* AUC(area under curve): ROC curve 아래의 면적, 숫자가 높을수록 좋다.
+
 * omission.rate: the ommission rate as a proportion of true occurrences misidentified given the defined threshold value
 * sensitivity: 1일 확률, 민감도
 * specificity: 0일 확률, 특이도
@@ -39,23 +39,42 @@ prop.correct(mat)
   * 신뢰도 높다: 0.6 ~ 0.75
   * 신뢰도 매우 높다: 0.75 초과
 
-###### 분류를 목적하는 상황에서의 평가 척도 
+###### [참고] 분류를 목적하는 상황에서의 평가 척도 
  * 정확도 . 정밀도 : 참긍정의 수/\(참긍정의 수 + 거짓긍적의 수\) 
  * 재현율 : 참긍정의 수/\(참긍정의 수 + 거짓부정의 수\) 
  * F점수\(F-score\) : 정밀도와 재현율을 합한값, \(2x정밀도x재현율\)/\(정밀도+재현율\) 
  * 향상도\(lift\) 
 
-###### 순서를 매기는 상황에서의 평가 척도 
+###### [참고] 순서를 매기는 상황에서의 평가 척도 
 * AUC \(ROC 곡선 아래 면적\), 누적향상도 곡선 아래 면적 
+ * 숫자가 높을수록 좋다.
+ * ROC커브는 점수 기준을 달리 할때 TP Rate와 FP Rate가 어떻게 달라 지는지 그래프로 표시한 것 
 
 
+###### [참고] 혼돈행렬      
+![](/assets/cmat.jpg)
+혼돈행렬을 이용하여 구할수 있는 메트릭
 
-      
-![](/assets/coma.png)
+| 메트릭                           | 계산식                                             | 의미                          |
+| ----------------------------- | ----------------------------------------------- | --------------------------- |
+| Precision                     | $$\frac {TP}{Tp+FP}$$                           | Y로 예측된것 중 실제로도 Y인 경우의 비율    |
+| Accuracy                      | $$\frac {TP+TN}{TP+FP+FN+TN}$$                  | 전체 예측에서 옳은 예측의 비율           |
+| Recall / sesitivity / TP Rate | $$\frac {TP}{TP+FN}$$                           | 실제로 Y인 것들 중 예측이 Y로 된 경우의 비율 |
+| Specificity                   | $$\frac {TN}{FP+TN}$$                           | 실제로 N인 것들 중 예측이 N로 된 경우의 비율 |
+| FP Rate / False alarm         | $$\frac {FP}{FP+TN}$$                           | Y가 아닌데 Y로 예측된 비율            |
+| F1                            |                                                 | Precision 과 Recal의 조화 평균    |
+| Kappa(코헨의 카파)                 |                                                 | 두 평가자의 평가가 얼마나 일지 하는지 평가    |
+
+
 * 정확도 : 모델의 정확도
 * 민감도 : True 확률
 * 특이도 : False 확룰
 * 오류율 : 모델의 오류율
+
+###### [문제 풀이]
+![](/assets/coma.png)
+
+
 
 http://databaser.net/moniwiki/wiki.php/%EB%A1%9C%EC%A7%80%EC%8A%A4%ED%8B%B1%ED%9A%8C%EA%B7%80%EB%B6%84%EC%84%9D
 
