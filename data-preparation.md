@@ -85,9 +85,21 @@ Wrapper : 어떤 고정된 크기의 특징들의 부분 집합을 찾고자 한
     * `rstudent()`: 외면 스튜던트화 잔차를 구한다. 
 * 본페로니(Bonferroni) : 
     * `car::outlinerTest()`: 이상값 검정 수행 
-### 2.2 결측치 찾기
+
+#### B. 이상치 처리
+
+### 2.2 결측치 
+
+#### A. 결측치 찾기
 * 결측값이 총 몇 개인지 계산하는 방법: sum(is.na())
 * 관측값에 결측치가 없는지를 테스트하며, 반환 값은 관측값에 결측치가 있으면 FALSE, 없으면 TRUE가 된다. complete.cases()
+
+#### B. 결측치 처리
+* NA를 가운데 값(central value)로 대체 한다. `DMwR::centralInputation()`
+* NA를 K최근 이웃 분류 알고리즘을 이용해 대체 한다. `DMwR::knnImputation()`
+
+
+
 
 ###### Missing values treatment
 * Delection(List wise delection) : 빈값이 있는행 삭제, 간편함, 샘플수 줄어듬의 단점
@@ -130,7 +142,8 @@ test2$lesson_time2 <- sub("NULL","0",test2$lesson_time)
 
 
 ## 3. Construct Data
-데이터 정규화(Feature Scaling) 
+
+### 3.1 데이터 정규화(Feature Scaling) 
 * 변숫값의 분포를 표준화 하는 것 
 * 표준화 = 변수에서 데이터의 평균을 빼거나 or 변수를 전체 데이터의 표준 편차로 나누는 작업 
 * 결과 : 변수값이 평균이 0이 되고, 값의 분포가 일정해짐 
@@ -152,6 +165,17 @@ Scale (x, center = TRUE, scale = TURE)
 
 
 > Center = 평균이 0이 되게 함, Scale = 분산이 1이 되게함 
+
+### 3.3 주성분 분석(PCA)
+* 데이터에 많은 변수가 있을 때 변수의 수를 줄이는 차원 감소 기법
+
+### 3.4 원 핫 인코딩(One Hot Encoding)
+* 범주형 변수의 Level을 줄이는 작업 
+* 여러 가변수를 이용해 범주형 변수를 재 표현 
+* model.matrix() 를 사용해 구할수 있음 
+
+> 랜덤 포레스트의 경우 32개 이하 Level만 지원하므로 넘는 다면 OHE가 필수적
+
 
 ## 4. Integrate Data
 PCA(Principle Component Anaysis, 주성분분석)
