@@ -94,6 +94,7 @@ http://databaser.net/moniwiki/wiki.php/%EB%A1%9C%EC%A7%80%EC%8A%A4%ED%8B%B1%ED%9
 * 일반적으로 상관 계수는 `피어슨 상관 계수`의미 
 * R의 cor()사용 
  * method=c("pearson","spearman","kendall")
+* R에서 상관 계수 검정 cor.test()사용 
 
 #### 피어슨 상관 계수(Pearson Correlation Coefficient)
 * 두 변수 간의 `선형적` 상관 관계 측정
@@ -119,6 +120,18 @@ $$
 $$
 \rho = \frac{\sum_i(x_i-\overline x)(y_i-\overline y)}{\sqrt{\sum_i(x_i-\overline x)^2}\sqrt{\sum_i(y_i-\overline y)^2}}
 $$
+
+#### 켄달의 순위 상관 계수(Kendal's Rank Correlation Cofficient)
+* (X,Y)순서쌍으로 데이터가 있을때
+ * x가 커질때 y도 커지면 부합
+ * x가 커질때 y가 작아지면 비부합
+* [-1,1]사이의 값을 가짐, 1은 부합 데이터쌍의 비율이 100%, -1은 비부합 데이터쌍의 비율이 100%, 0은 상관 관계 없음 의미
+* 정의 
+$$
+\tau = \frac{(부합 테이터쌍의 수)-(비부합 데이터쌍의 수)}{\frac{1}{2}n(n-1)}
+$$
+
+
 
 ## 2. Approved Models
 
