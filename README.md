@@ -25,46 +25,17 @@ CRISP-DM에 따르면 가장 첫 부분에는 "Business Understaing"부터 시�
 
 This initial phase focuses on understanding the project objectives and requirements from a business perspective, and then converting this knowledge into a data mining problem definition, and a preliminary plan designed to achieve the objectives. A decision model, especially one built using the Decision Model and Notation standard can be used.
 
+* 목표
+  * 고객의 요구 사항과 비즈니스 목표를 이해하고 이를 데이터 마이닝의 목표로 전환
+  * 결과에 영향을 주는 중요한 항목을 도출하고 마이닝 목표를 달성하기 위한 예비 계획 수립
 
+* Actions
+ * Determine Business Objects : 비즈니스 관점에서 고객 요구를 이해
+  * Assess Situation : 프로젝트에 영향을 미치는 요인에 대한 사실 조사
+  * Determine Data Mining Goals : 기술적인 측면에서 프로젝트 목표를 결정
+  * Produce Project Plan : 프로젝트의 목표를 ​​달성하기 위한 세부 계획의 준비
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-You can label chapter and section titles using `{#label}` after them, e.g., we can reference Chapter \@ref(intro). If you do not manually label them, there will be automatic labels anyway, e.g., Chapter \@ref(methods).
-
-Figures and tables with captions will be placed in `figure` and `table` environments, respectively.
-
-```{r nice-fig, fig.cap='Here is a nice figure!', out.width='80%', fig.asp=.75, fig.align='center'}
-par(mar = c(4, 4, .1, .1))
-plot(pressure, type = 'b', pch = 19)
-```
-
-Reference a figure by its code chunk label with the `fig:` prefix, e.g., see Figure \@ref(fig:nice-fig). Similarly, you can reference tables generated from `knitr::kable()`, e.g., see Table \@ref(tab:nice-tab).
-
-```{r nice-tab, tidy=FALSE}
-knitr::kable(
-  head(iris, 20), caption = 'Here is a nice table!',
-  booktabs = TRUE
-)
-```
-
-You can write citations, too. For example, we are using the **bookdown** package [@R-bookdown] in this sample book, which was built on top of R Markdown and **knitr** [@xie2015].
+* 기업내의 어떤 문제점을 빅데이터로 해결할 것인가?
 
 ---
 [1]: http://www.kdnuggets.com/2014/10/crisp-dm-top-methodology-analytics-data-mining-data-science-projects.html "KDNuggets Poll"
