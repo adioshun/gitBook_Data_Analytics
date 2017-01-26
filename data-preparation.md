@@ -46,7 +46,7 @@ Wrapper : 어떤 고정된 크기의 특징들의 부분 집합을 찾고자 한
 * 고려 요소 1 : 특징들을 선택하기 위해 사용하는 알고리즘 선택 
     1. 전진 선택(Forward Selection) = 
     2. 후진 제거(Backward Elimination) 
-    3. 혼합형 접근(Combined Approach) 
+    3. 단계적 방법(Stepwise selection) 
 * 고려 요소 2 : 특징들의 집합을 '좋다'고 판단하기 위한 필터나 선택 기준 결정 
     * R제곱값 = 모형에 의해 설명되는 분산의 비율 
     * P 값 = 가정된 귀무가설이 관찰값을 이용하여 얻게될 확률 
