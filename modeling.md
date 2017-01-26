@@ -7,8 +7,6 @@ In this phase, various modeling techniques are selected and applied, and their p
 
 ## 2. Generate Test Design 
 
-
-
 ## 3. Build Model Parameter settings
 파라미터 튜닝 : trControl()
 ![](/assets/tr.png)
