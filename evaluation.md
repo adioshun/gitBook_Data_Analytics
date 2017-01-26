@@ -89,8 +89,36 @@ http://databaser.net/moniwiki/wiki.php/%EB%A1%9C%EC%A7%80%EC%8A%A4%ED%8B%B1%ED%9
 * a “goodness of fit” measure for the predictions to the observations. 
 * This is a value between 0 and 1 for no-fit and perfect fit respectively
 
+### 성능 평가 인자 (Correlation)
+* 두 확률 변수 사이의 관련성 파악
+* 일반적으로 상관 계수는 `피어슨 상관 계수`의미 
+* R의 cor()사용 
+ * method=c("pearson","spearman","kendall")
+
+#### 피어슨 상관 계수(Pearson Correlation Coefficient)
+* 두 변수 간의 `선형적` 상관 관계 측정
+* 연속형 데이터에 적합
+ * eg. 국어 & 영어 점수 간의 상관 관계 
+* [-1,1]사이의 값을 가짐, 0은 상관 관계 없음 의미 
+* 정의 
+$$
+\rho(X,Y) = \frac{cov(X,Y)}{\sigma_X\sigma_Y}
+$$
+
+> $$\rho(X,Y)$$는 공분산, 두 확률 변수가 얼마나 함께 변하는가 측정
 
 
+#### 스피어만 상관 계수(Spearman's Rank Correlation Cofficient)
+* 두 데이터의 실제 데이터 대신 두 값의 `순위(rank)`를 사용
+* 두 변수 간의 `비선형` 연관성 파악 가능
+* 이산형, 순서형 데이터에 적용 가능 
+ * eg. 국어 & 영어 석차의 상관 관계
+* [-1,1]사이의 값을 가짐, 0은 상관 관계 없음 의미 
+* 정의 
+
+$$
+\rho = \frac{\sum_i(x_i-\overline x)(y_i-\overline y)}{\sqrt{\sum_i(x_i-\overline x)^2}\sqrt{\sum_i(y_i-\overline y)^2}}
+$$
 
 ## 2. Approved Models
 
