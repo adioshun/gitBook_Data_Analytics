@@ -91,26 +91,36 @@ Wrapper : 어떤 고정된 크기의 특징들의 부분 집합을 찾고자 한
 ### 2.2 결측치 
 
 #### A. 결측치 찾기
-* 결측값이 총 몇 개인지 계산하는 방법: sum(is.na())
+* 결측값이 총 몇 개인지 계산하는 방법: sum(is.na()), table(is.na())
 * 관측값에 결측치가 없는지를 테스트하며, 반환 값은 관측값에 결측치가 있으면 FALSE, 없으면 TRUE가 된다. complete.cases()
+* 그래프를 이용한 찾기 Amelia()
 
 #### B. 결측치 처리
-* NA를 가운데 값(central value)로 대체 한다. `DMwR::centralInputation()`
-* NA를 K최근 이웃 분류 알고리즘을 이용해 대체 한다. `DMwR::knnImputation()`
+방식마다 사용 방법이 다름
+* rpart - surrogate변수
+* 랜덤 포레스트 - randomForest::rfImpute() 
 
-
-
-
-###### Missing values treatment
+##### 가. 삭제 
 * Delection(List wise delection) : 빈값이 있는행 삭제, 간편함, 샘플수 줄어듬의 단점
     * ld(data)  
     * 결측값이 들어있는 행 전체를 데이터 셋에서 제거: test <- na.omit(test)
 * Delection(pair wise delection) : 
 * 특정 행과 열에 결측값이 들어있는 행을 데이터 셋에서 제거 : complete.cases()
-* Replace : 결측값을 다른 값으로 대체: dataset$var[is.na(dataset$var)] <- new_value
-
 ![](/assets/missing2.png)
 
+##### 나. 대체
+* NA를 가운데 값(central value)로 대체 한다. `DMwR::centralInputation()`
+* NA를 K최근 이웃 분류 알고리즘을 이용해 대체 한다. `DMwR::knnImputation()`
+* NA를 다른 값으로 대체한다. `dataset$var[is.na(dataset$var)] <- new_value`
+* NULL/NA -> 0으로 변경 
+```
+test2$lesson_time <- as.character(test2$lesson_time)
+test2$lesson_time2 <- sub("NULL","0",test2$lesson_time)
+```
+
+
+
+###### [참고] 
 http://www.analyticsvidhya.com/blog/2015/02/7-steps-data-exploration-preparation-building-model-part-2/
 http://rfriend.tistory.com/34 
 
@@ -119,27 +129,13 @@ PISA : http://jbryer.github.com/pisa
 http://www.r-bloggers.com/visualizing-missing-data-3/
 
 
-
-결측치 대치(imputation) 
-* 결측치 찾기 : complete.cases() , table(is.na(데이터))
-* 처리 방법 : 해당 데이터 제외, 평균, 중앙값 
-* 방식마다 사용 방법이 다름?? : rpart  surrogate변수, 랜덤 포레스트  randomForest::rfImpute() 
-    *DMwR::centrallnputation() : NA를 가운데 값으로 대체 한다
-    * DMwR::knnimputation() : na를 k 최근 이웃 분류 알고리즘을 이용해 대체 한다. 
-    * Amelia()
-
-* NULL/NA -> 0으로 변경 
 ```
-test2$lesson_time <- as.character(test2$lesson_time)
-test2$lesson_time2 <- sub("NULL","0",test2$lesson_time)
+[결측치 비중에 따른 해결법](http://blog.naver.com/jinwon_hong/140160442723)
+
+ * 결측치 ~ 10% : 제거, 대치법(Imputation of missing Data)
+ * 결측치 10~20% : Hot deck cast substitution, regression, modell-based methods
+ * 결측치가 20%~ : egression, model-based mehod 
 ```
-
-> [결측치 비중에 따른 해결법](http://blog.naver.com/jinwon_hong/140160442723)
-
-> * 결측치 ~ 10% : 제거, 대치법(Imputation of missing Data)
-> * 결측치 10~20% : Hot deck cast substitution, regression, modell-based methods
-> * 결측치가 20%~ : egression, model-based mehod 
-
 
 ## 3. Construct Data
 
