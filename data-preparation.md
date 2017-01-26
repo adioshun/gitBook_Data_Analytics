@@ -77,11 +77,19 @@ Wrapper : 어떤 고정된 크기의 특징들의 부분 집합을 찾고자 한
 ![](/assets/varlmp.png)
           
 ## 2. Clean Data
-결측치 찾기
+
+### 2.1 이상치 (Outlier)
+
+#### A. 이상치 찾기 
+* 잔차, 특히 외면 스튜던트화 잔차(Externally Studentized Residual) 이용,
+    * `rstudent()`: 외면 스튜던트화 잔차를 구한다. 
+* 본페로니(Bonferroni) : 
+    * `car::outlinerTest()`: 이상값 검정 수행 
+### 2.2 결측치 찾기
 * 결측값이 총 몇 개인지 계산하는 방법: sum(is.na())
 * 관측값에 결측치가 없는지를 테스트하며, 반환 값은 관측값에 결측치가 있으면 FALSE, 없으면 TRUE가 된다. complete.cases()
 
-Missing values treatment
+###### Missing values treatment
 * Delection(List wise delection) : 빈값이 있는행 삭제, 간편함, 샘플수 줄어듬의 단점
     * ld(data)  
     * 결측값이 들어있는 행 전체를 데이터 셋에서 제거: test <- na.omit(test)
