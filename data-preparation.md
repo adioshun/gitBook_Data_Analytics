@@ -185,24 +185,6 @@ Scale (x, center = TRUE, scale = TURE)
 
 
 ## 4. Integrate Data
-PCA(Principle Component Anaysis, 주성분분석)
-* PCA는 데이터에 많은 변수가 있을때 변수의 수를 줄이는 차원 감소 기법중 하나 
-얼굴 인식 분야에서 가장 보편 적으로 사용, 다중공선성 문제 해결에 활용 가능
-* PCA는 변수들을 주성분이라 부르는 선형적인 상관관계가 없는 다른 변수들로 재표현 
-* 주성분들은 원 데이터의 분산을 최대한 보존하는 방법으로 구함
-* PCA는 선형적으로 상관관계가 없는 독립된 변수들을 찾는 기법  
-* Princomp()함수 사용 : 
-    * 범주 레벨의 수가 많다면 One Hot Encoding(model.matrix())사용
-
-
-* 동작 순서 
-
-    1. 전체 데이터의 평균을 구한다
-    2. 전체 데이터에 평균을 뺀다
-    3. 공분산 행렬을 만든다. (공분산 행렬은 모든 요소의 공통된 부분을 뺀 개별적 특징이 포함된 데이터라고 표현할 수 있다.)
-    4. 공분산 행렬을 이용해 Eigen value와 Eigen vector를 구한다 
-    5. 전체 데이터를 Eigen vector에 Projection한다    (= Projection matrix(eigen vecto들의 모음)을 모든 데이터에 곱한다)
-    
 
 
 ## 5. Format Data 
