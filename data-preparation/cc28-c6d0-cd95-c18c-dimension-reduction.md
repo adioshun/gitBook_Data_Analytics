@@ -12,6 +12,8 @@
 
 3. 군집화 : 비슷한 데이터 점들을 모아 보는것 
 
+![](http://sebastianraschka.com/images/blog/2014/linear-discriminant-analysis/lda_1.png)
+
 ## 1. 선형 판별 분석 (LDA: Linear Discriminant Analysis)
 지도학습에 목적을 둔 차원 축소 방법 
 1936년 R.A 피셔 
