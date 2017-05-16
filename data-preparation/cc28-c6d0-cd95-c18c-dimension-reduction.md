@@ -11,3 +11,12 @@
 2. Feature derivation : 기존 피처를 사용하여서 새로운 피처 생산 
 
 3. 군집화 : 비슷한 데이터 점들을 모아 보는것 
+
+## 1. 선형 판별 분석 (LDA: Linear Discriminant Analysis)
+지도학습에 목적을 둔 차원 축소 방법 
+1936년 R.A 피셔 
+
+정의 : 공분산(데이터 안에 분포 정도 표현)을 이용해서 데이터의 흩어진 정보를 이해 
+
+## 2. 주성분 분석 (PCA: Principle Component Analysis)
+Label이 없는 데이터에 사용 가능한 방법 (Label있는 데이터도 가능) 
