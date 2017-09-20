@@ -86,7 +86,7 @@ prop.correct(mat)
 * 특이도 : False 확룰
 * 오류율 : 모델의 오류율
 
-> 추천 읽을꺼리 : [Classification 모델 평가 기준 1편](https://brunch.co.kr/@chris-song/54)
+> 추천 읽을꺼리 : [Classification 모델 평가 기준 1편- Precision과 Recall](https://brunch.co.kr/@chris-song/54)
 
 ###### \[문제 풀이\]
 
