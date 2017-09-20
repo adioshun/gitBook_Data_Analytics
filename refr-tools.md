@@ -1,0 +1,1 @@
+R을 SPPS처럼 사용할수 있는 무료 툴 : [Jamovi](https://www.jamovi.org/features.html)
