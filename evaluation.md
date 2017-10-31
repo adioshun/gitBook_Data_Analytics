@@ -18,7 +18,25 @@ At this stage in the project you have built a model \(or models\) that appears t
 여러 모델을 동시 성능 평가  
 ![](/assets/fmtest.png)
 
+- Classification에서의 Metric 
+  - Accuracy : 전체 정답률
+  - Precision : 양성 항목 **정답률**
+  - Recall : 양성 항목 **검출율**
+
+- Regression에서의 Metric : Distance Between True & Predicted Function 
+  - 예측값과 결과값 사이의 오차 거리를 계산 
+  - (L2 Norm, L2 Norm, L-Infinite Norm. etc)
+
+
+
+
+
 ### 1.1 성능 평가 인자 \(Classification \)
+
+- Classification에서의 Metric 
+  - Accuracy : 전체 정답률
+  - Precision : 양성 항목 **정답률**
+  - Recall : 양성 항목 **검출율**
 
 * Confusion matrix : [http://blog.naver.com/ilustion/220275811793](http://blog.naver.com/ilustion/220275811793)
 * lift chart
@@ -183,6 +201,12 @@ $$
 ### 1.4 성능 평가 인자 \(Regression\)
 
 > 선형회귀 결과에 한정일수 있음
+
+- Regression에서의 Metric : Distance Between True & Predicted Function 
+  - 예측값과 결과값 사이의 오차 거리를 계산 
+  - (L2 Norm, L2 Norm, L-Infinite Norm. etc)
+
+![](https://i.imgur.com/uXq90EF.png)
 
 #### A. 결정계수\($$R^2$$\)
 
