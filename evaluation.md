@@ -20,8 +20,8 @@ At this stage in the project you have built a model \(or models\) that appears t
 
 - Classification에서의 Metric 
   - Accuracy : 전체 정답률
-  - Precision : 양성 항목 **정답률**
-  - Recall : 양성 항목 **검출율**
+  - Precision : 양성 항목 **정답률**, 양성 판단을 내린것 중에...
+  - Recall : 양성 항목 **검출율**, 실제 있는 양성 중에...
 
 - Regression에서의 Metric : Distance Between True & Predicted Function 
   - 예측값과 결과값 사이의 오차 거리를 계산 
@@ -33,15 +33,12 @@ At this stage in the project you have built a model \(or models\) that appears t
 
 ### 1.1 성능 평가 인자 \(Classification \)
 
-- Classification에서의 Metric 
-  - Accuracy : 전체 정답률
-  - Precision : 양성 항목 **정답률**
-  - Recall : 양성 항목 **검출율**
-
 * Confusion matrix : [http://blog.naver.com/ilustion/220275811793](http://blog.naver.com/ilustion/220275811793)
 * lift chart
 * gain chart
-* ROC Curve \(classification 에서만\)
+* ROC Curve \(classification 에서만\) : Recall과 관련 
+  - 판단 기준선의 민감도, 분류기준이 잘 되어 있다. Feature들이 좋다. 
+  - 판단 기준이 바뀌어도 에러 발생율이 없는것이 ROC 커브가 좋은것 
 
 #### A. Accuracy
 
@@ -128,6 +125,10 @@ prop.correct(mat)
 * ROC can be broken down into sensitivity and specificity.  \(Trade-off 관계\)
   * Sensitivity = the true positive rate = recall : It is the number instances from the positive \(first\) class that actually predicted correctly.
   * Specificity = true negative rate : Is the number of instances from the negative class \(second\) class that were actually predicted correctly
+  
+  
+  
+  
 
 #### E. Gini : ROC 확장 버전, 일반적으로 60%이상이면 좋은 모델임
 
